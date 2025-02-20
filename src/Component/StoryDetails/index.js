@@ -8,8 +8,6 @@ const StoryDetail = () => {
   const { id } = useParams();
 
   useEffect(() => {
-   
-
     const fetchStoryDetail = async () => {
       try {
         const response = await fetch(
@@ -44,7 +42,6 @@ const StoryDetail = () => {
   return (
     <div className="min-h-screen bg-[#0a0b1f] text-white">
       <div className="max-w-7xl mx-auto px-4 py-8">
-        
         <h1 className="text-4xl font-bold mb-8">
           <span className="text-purple-300">The Lost City of</span>{" "}
           {story?.Title || "Unknown"}
@@ -93,13 +90,8 @@ const StoryDetail = () => {
               .map((_, index) => (
                 <div key={index} className="relative group cursor-pointer">
                   <div className="overflow-hidden rounded-lg bg-gradient-to-b from-transparent to-purple-900/80">
-               
                     <img
-                      src={
-                        story?.Image
-                          ? `https://ik.imagekit.io/dev24/${story.Image}`
-                          : "/fallback-image.jpg"
-                      }
+                      src={`https://ik.imagekit.io/dev24/${story?.Image[0]}`}
                       alt={`Story scene ${index + 1}`}
                       className="w-full h-40 object-cover transition-transform duration-300 group-hover:scale-110"
                     />
