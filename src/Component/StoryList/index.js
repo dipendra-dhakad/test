@@ -109,7 +109,6 @@ const StoryList = () => {
                 )}`
               : "https://via.placeholder.com/400x300?text=No+Image";
 
-            console.log("Image URL:", imageUrl); // Debugging log
 
             return (
               <div
