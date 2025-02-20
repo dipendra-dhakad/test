@@ -22,8 +22,6 @@ const StoryList = () => {
       );
       const data = await response.json();
 
-  
-
       if (!Array.isArray(data)) {
         console.error("Invalid API response format", data);
         return;
@@ -104,11 +102,8 @@ const StoryList = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {stories.map((story) => {
             const imageUrl = story.Image
-              ? `https://ik.imagekit.io/dev24/${encodeURIComponent(
-                  story.Image
-                )}`
+              ? `https://ik.imagekit.io/dev24/${story.image}}`
               : "https://via.placeholder.com/400x300?text=No+Image";
-
 
             return (
               <div
