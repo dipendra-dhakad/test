@@ -101,9 +101,7 @@ const StoryList = () => {
         {/* Stories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {stories.map((story) => {
-            const imageUrl = story.Image
-              ? `{https://ik.imagekit.io/dev24/${story.Image[0]}}`
-              : "https://via.placeholder.com/400x300?text=No+Image";
+            const imageUrl = `https://ik.imagekit.io/dev24/${story?.Image[0]}`
 
             return (
               <div
